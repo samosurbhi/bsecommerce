@@ -13,9 +13,11 @@
 @end
 
 @implementation ViewController
+@synthesize appDelegate;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     // Do any additional setup after loading the view, typically from a nib.
 }
 
@@ -24,15 +26,14 @@
     // Dispose of any resources that can be recreated.
 }
 - (IBAction)SignInWithFacebook:(UIButton *)sender {
-    AppDelegate *appDelegate = [[UIApplication sharedApplication]delegate];
     //public_profile
-    appDelegate.session = [[FBSession alloc] initWithPermissions:@[@"public_profile,email"]];
-    [FBSession setActiveSession:appDelegate.session];
+    self.appDelegate.session = [[FBSession alloc] initWithPermissions:@[@"public_profile,email,user_friends"]];
+    [FBSession setActiveSession:self.appDelegate.session];
     
-    [appDelegate.session openWithBehavior:FBSessionLoginBehaviorWithFallbackToWebView
-                        completionHandler:^(FBSession *session,
-                                            FBSessionState status,
-                                            NSError *error)
+    [self.appDelegate.session openWithBehavior:FBSessionLoginBehaviorWithFallbackToWebView
+                             completionHandler:^(FBSession *session,
+                                                 FBSessionState status,
+                                                 NSError *error)
      {
          if (FBSession.activeSession.isOpen)
          {

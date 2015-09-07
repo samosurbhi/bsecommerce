@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		96F5AA161B9D6ACE0064528A /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96F5AA151B9D6ACE0064528A /* FacebookSDK.framework */; };
+		96F5AA181B9D79B90064528A /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96F5AA171B9D79B90064528A /* Social.framework */; };
+		96F5AA1C1B9DC9000064528A /* ProductListingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96F5AA1B1B9DC9000064528A /* ProductListingViewController.m */; };
+		96F5AA1F1B9DC91E0064528A /* ProductListingTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 96F5AA1E1B9DC91E0064528A /* ProductListingTableViewCell.m */; };
+		96F5AA211B9DCDDE0064528A /* skater.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 96F5AA201B9DCDDE0064528A /* skater.jpg */; };
 		B0F6030F1B9D4EAC00033580 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B0F6030E1B9D4EAC00033580 /* main.m */; };
 		B0F603121B9D4EAC00033580 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B0F603111B9D4EAC00033580 /* AppDelegate.m */; };
 		B0F603151B9D4EAC00033580 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0F603141B9D4EAC00033580 /* ViewController.m */; };
@@ -14,7 +19,6 @@
 		B0F6031A1B9D4EAC00033580 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0F603191B9D4EAC00033580 /* Images.xcassets */; };
 		B0F6031D1B9D4EAC00033580 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0F6031B1B9D4EAC00033580 /* LaunchScreen.xib */; };
 		B0F603291B9D4EAC00033580 /* MinifmTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B0F603281B9D4EAC00033580 /* MinifmTests.m */; };
-		B0F603331B9D501C00033580 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0F603321B9D501C00033580 /* FacebookSDK.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,6 +32,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		96F5AA151B9D6ACE0064528A /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
+		96F5AA171B9D79B90064528A /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		96F5AA1A1B9DC9000064528A /* ProductListingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductListingViewController.h; sourceTree = "<group>"; };
+		96F5AA1B1B9DC9000064528A /* ProductListingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductListingViewController.m; sourceTree = "<group>"; };
+		96F5AA1D1B9DC91E0064528A /* ProductListingTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductListingTableViewCell.h; sourceTree = "<group>"; };
+		96F5AA1E1B9DC91E0064528A /* ProductListingTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductListingTableViewCell.m; sourceTree = "<group>"; };
+		96F5AA201B9DCDDE0064528A /* skater.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = skater.jpg; sourceTree = "<group>"; };
 		B0F603091B9D4EAC00033580 /* Minifm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Minifm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0F6030D1B9D4EAC00033580 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B0F6030E1B9D4EAC00033580 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -41,7 +52,6 @@
 		B0F603221B9D4EAC00033580 /* MinifmTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MinifmTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0F603271B9D4EAC00033580 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B0F603281B9D4EAC00033580 /* MinifmTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MinifmTests.m; sourceTree = "<group>"; };
-		B0F603321B9D501C00033580 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,7 +59,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B0F603331B9D501C00033580 /* FacebookSDK.framework in Frameworks */,
+				96F5AA181B9D79B90064528A /* Social.framework in Frameworks */,
+				96F5AA161B9D6ACE0064528A /* FacebookSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,9 +74,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		96F5AA191B9DC8D70064528A /* Buy */ = {
+			isa = PBXGroup;
+			children = (
+				96F5AA1A1B9DC9000064528A /* ProductListingViewController.h */,
+				96F5AA1B1B9DC9000064528A /* ProductListingViewController.m */,
+				96F5AA1D1B9DC91E0064528A /* ProductListingTableViewCell.h */,
+				96F5AA1E1B9DC91E0064528A /* ProductListingTableViewCell.m */,
+			);
+			name = Buy;
+			sourceTree = "<group>";
+		};
 		B0F603001B9D4EAC00033580 = {
 			isa = PBXGroup;
 			children = (
+				96F5AA171B9D79B90064528A /* Social.framework */,
 				B0F6030B1B9D4EAC00033580 /* Minifm */,
 				B0F603251B9D4EAC00033580 /* MinifmTests */,
 				B0F6030A1B9D4EAC00033580 /* Products */,
@@ -84,6 +107,7 @@
 		B0F6030B1B9D4EAC00033580 /* Minifm */ = {
 			isa = PBXGroup;
 			children = (
+				96F5AA191B9DC8D70064528A /* Buy */,
 				B0F603101B9D4EAC00033580 /* AppDelegate.h */,
 				B0F603111B9D4EAC00033580 /* AppDelegate.m */,
 				B0F603131B9D4EAC00033580 /* ViewController.h */,
@@ -99,7 +123,8 @@
 		B0F6030C1B9D4EAC00033580 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				B0F603321B9D501C00033580 /* FacebookSDK.framework */,
+				96F5AA201B9DCDDE0064528A /* skater.jpg */,
+				96F5AA151B9D6ACE0064528A /* FacebookSDK.framework */,
 				B0F6030D1B9D4EAC00033580 /* Info.plist */,
 				B0F6030E1B9D4EAC00033580 /* main.m */,
 			);
@@ -206,6 +231,7 @@
 				B0F603181B9D4EAC00033580 /* Main.storyboard in Resources */,
 				B0F6031D1B9D4EAC00033580 /* LaunchScreen.xib in Resources */,
 				B0F6031A1B9D4EAC00033580 /* Images.xcassets in Resources */,
+				96F5AA211B9DCDDE0064528A /* skater.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -226,6 +252,8 @@
 				B0F603151B9D4EAC00033580 /* ViewController.m in Sources */,
 				B0F603121B9D4EAC00033580 /* AppDelegate.m in Sources */,
 				B0F6030F1B9D4EAC00033580 /* main.m in Sources */,
+				96F5AA1F1B9DC91E0064528A /* ProductListingTableViewCell.m in Sources */,
+				96F5AA1C1B9DC9000064528A /* ProductListingViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -358,6 +386,7 @@
 				INFOPLIST_FILE = Minifm/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -372,6 +401,7 @@
 				INFOPLIST_FILE = Minifm/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -428,6 +458,7 @@
 				B0F6032E1B9D4EAC00033580 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B0F6032F1B9D4EAC00033580 /* Build configuration list for PBXNativeTarget "MinifmTests" */ = {
 			isa = XCConfigurationList;
@@ -436,6 +467,7 @@
 				B0F603311B9D4EAC00033580 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

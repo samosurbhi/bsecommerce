@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <FacebookSDK/FacebookSDK.h>
+#import "AppDelegate.h"
 
-@interface ViewController : UIViewController
-
+@interface ViewController : UIViewController<FBLoginViewDelegate>
+@property (nonatomic, strong) AppDelegate *appDelegate;
 
 @end
 
