@@ -68,6 +68,9 @@
 //                      [api_obj facebooklogin :@selector(fblogincheckresult:) tempTarget:self  :useremail :device_Token];
 //                      HUD=[MBProgressHUD showHUDAddedTo:self.view animated:YES];
 //                      HUD.labelText=@"Please wait...";
+                      
+                      
+        //sdsdfsafdsa fasdfkhsfdks;ldjflasjdf 
                   }
                   else
                   {
