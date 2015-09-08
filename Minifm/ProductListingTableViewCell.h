@@ -17,6 +17,21 @@
 @property (strong, nonatomic) IBOutlet UILabel *lbl_productName;
 @property (strong, nonatomic) IBOutlet UILabel *lbl_productPrice;
 @property (strong, nonatomic) IBOutlet UIButton *btn_addToCart;
+@property (strong, nonatomic) IBOutlet UIImageView *img_likes;
+@property (strong, nonatomic) IBOutlet UIImageView *img_comments;
+
+@property (strong, nonatomic) IBOutlet UIImageView *img_share;
+@property (strong, nonatomic) IBOutlet UIImageView *img_addIcon;
+@property (strong, nonatomic) IBOutlet UIButton *btn_like;
+@property (strong, nonatomic) IBOutlet UILabel *lbl_likeCount;
+@property (strong, nonatomic) IBOutlet UIButton *btn_comment;
+@property (strong, nonatomic) IBOutlet UILabel *lbl_comment;
+@property (strong, nonatomic) IBOutlet UIButton *btn_share;
 
 - (IBAction)Action_AddToCard:(id)sender;
+
+- (IBAction)Action_Like:(id)sender;
+- (IBAction)Action_Comment:(id)sender;
+- (IBAction)Action_Share:(id)sender;
+
 @end

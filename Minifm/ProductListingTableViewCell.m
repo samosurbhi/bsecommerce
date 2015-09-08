@@ -22,4 +22,13 @@
 
 - (IBAction)Action_AddToCard:(id)sender {
 }
+
+- (IBAction)Action_Like:(id)sender {
+}
+
+- (IBAction)Action_Comment:(id)sender {
+}
+
+- (IBAction)Action_Share:(id)sender {
+}
 @end

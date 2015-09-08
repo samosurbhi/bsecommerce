@@ -21,7 +21,8 @@
     [super viewDidLoad];
     
    
-    
+    self.txt_search.background = [UIImage imageNamed:@"search_input.png"];
+    self.txt_search.layer.cornerRadius = 15;
     
     // Do any additional setup after loading the view.
 }
@@ -54,6 +55,17 @@
 {
     
 }
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+    {
+        return 550;
+    }
+    else
+    {
+        return 320;
+    }
+}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -69,9 +81,27 @@
     cell.img_userImage.layer.masksToBounds = YES;
     cell.img_userImage.image = [UIImage imageNamed:@"skater.jpg"];
     
-//    cell.btn_addToCart.layer.cornerRadius = cell.btn_addToCart.frame.size.height/2;
-//    cell.btn_addToCart.layer.masksToBounds = YES;
-//    cell.btn_addToCart = [UIImage imageNamed:@"skater.jpg"];
+    cell.img_addIcon.layer.cornerRadius = cell.img_addIcon.frame.size.height/2;
+    cell.img_addIcon.layer.masksToBounds = YES;
+    cell.img_addIcon.image = [UIImage imageNamed:@"cart_add_icon.png"];
+    
+    cell.img_likes.layer.borderColor = [UIColor darkGrayColor].CGColor;
+    cell.img_likes.layer.borderWidth = 2.0;
+    cell.img_comments.layer.borderColor = [UIColor darkGrayColor].CGColor;
+    cell.img_comments.layer.borderWidth = 2.0;
+    cell.img_share.layer.borderColor = [UIColor darkGrayColor].CGColor;
+    cell.img_share.layer.borderWidth = 2.0;
+    
+    cell.btn_addToCart.layer.cornerRadius = cell.btn_addToCart.frame.size.height/2;
+    cell.btn_addToCart.layer.masksToBounds = YES;
+    [cell.btn_addToCart setBackgroundImage:[UIImage imageNamed:@"cart_icon.png"] forState:UIControlStateNormal];
+    
+    [cell.btn_like setBackgroundImage:[UIImage imageNamed:@"fav_icon.png"] forState:UIControlStateNormal];
+    [cell.btn_comment setBackgroundImage:[UIImage imageNamed:@"message_icon.png"] forState:UIControlStateNormal];
+    [cell.btn_share setBackgroundImage:[UIImage imageNamed:@"share_icon.png"] forState:UIControlStateNormal];
+    
+    cell.lbl_likeCount.text = @"5";
+    cell.lbl_comment.text = @"5";
 
     cell.Img_productImage.image = [UIImage imageNamed:@"skater.jpg"];
     cell.lbl_userName.text = @"Vikram Gupta";
