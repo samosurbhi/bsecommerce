@@ -1,45 +1,95 @@
 //
-//  ViewController.m
+//  SignUpViewController.m
 //  Minifm
 //
 //  Created by Samosys on 07/09/15.
 //  Copyright (c) 2015 Samosys. All rights reserved.
 //
 
-#import "ViewController.h"
-#import "AppDelegate.h"
-#import "LoginViewController.h"
 #import "SignUpViewController.h"
-
-@interface ViewController ()
+#import "AppDelegate.h"
+@interface SignUpViewController ()
 
 @end
 
-@implementation ViewController
-@synthesize appDelegate;
+@implementation SignUpViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-    // Do any additional setup after loading the view, typically from a nib.
+    if (self.view.frame.size.height==480) {
+        scrollView.contentSize=CGSizeMake(self.view.frame.size.width, self.view.frame.size.height+200);
+    }
+    else {
+        scrollView.contentSize=CGSizeMake(self.view.frame.size.width, self.view.frame.size.height);
+    }
+    // Do any additional setup after loading the view.
 }
--(void)viewWillAppear:(BOOL)animated
-{
-    self.navigationController.navigationBar.hidden=YES;
-}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-- (IBAction)SignInWithFacebook:(UIButton *)sender {
-    //public_profile
-    self.appDelegate.session = [[FBSession alloc] initWithPermissions:@[@"public_profile,email,user_friends"]];
-    [FBSession setActiveSession:self.appDelegate.session];
+-(void)textFieldDidBeginEditing:(UITextField *)textField
+{
+    if (self.view.frame.size.height==480)
+        scrollView.contentSize=CGSizeMake(self.view.frame.size.width, self.view.frame.size.height+300);
+    else
+        scrollView.contentSize=CGSizeMake(self.view.frame.size.width, self.view.frame.size.height+200);
     
-    [self.appDelegate.session openWithBehavior:FBSessionLoginBehaviorWithFallbackToWebView
-                             completionHandler:^(FBSession *session,
-                                                 FBSessionState status,
-                                                 NSError *error)
+    if (textField==firstName) {
+        [scrollView setContentOffset:CGPointMake(0,50) animated:YES];
+
+    }
+    else if (textField==lastName) {
+        [scrollView setContentOffset:CGPointMake(0,100) animated:YES];
+        
+    }
+    else if (textField==emailAddress) {
+        [scrollView setContentOffset:CGPointMake(0,150) animated:YES];
+        
+    }
+    else if (textField==password) {
+        [scrollView setContentOffset:CGPointMake(0,200) animated:YES];
+        
+    }
+    else if (textField==confirmPassword) {
+        [scrollView setContentOffset:CGPointMake(0,250) animated:YES];
+        
+    }
+    
+}
+
+-(BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    if (self.view.frame.size.height==480) {
+        scrollView.contentSize=CGSizeMake(self.view.frame.size.width, self.view.frame.size.height+50);
+    }
+    else
+        {
+        scrollView.contentSize=CGSizeMake(self.view.frame.size.width, self.view.frame.size.height-50);
+    }
+    [textField resignFirstResponder];
+    return YES;
+}
+/*
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+}
+*/
+- (IBAction)loginwithFacebokk:(id)sender {
+    AppDelegate *appDelegate = [[UIApplication sharedApplication]delegate];
+    //public_profile
+    appDelegate.session = [[FBSession alloc] initWithPermissions:@[@"public_profile,email"]];
+    [FBSession setActiveSession:appDelegate.session];
+    
+    [appDelegate.session openWithBehavior:FBSessionLoginBehaviorWithFallbackToWebView
+                        completionHandler:^(FBSession *session,
+                                            FBSessionState status,
+                                            NSError *error)
      {
          if (FBSession.activeSession.isOpen)
          {
@@ -63,20 +113,7 @@
                       NSLog(@"%@",chatimage);
                       NSString *useremail = [user objectForKey:@"email"];
                       NSLog(@"%@",useremail);
-                      /*self.navigationController.navigationBar.hidden=YES;
-                       SlideViewController *svc;
-                       ProductListingViewController *plvc;
-                       UIStoryboard * storyBoardWithoutAuto =[UIStoryboard storyboardWithName:@"Main" bundle:nil];
-                       svc=[[SlideViewController alloc]initWithNibName:@"SlideViewController" bundle:nil];
-                       plvc=[storyBoardWithoutAuto instantiateViewControllerWithIdentifier:@"ProductListingViewController"];;
-                       
-                       UINavigationController *nax2=[[UINavigationController alloc]initWithRootViewController:plvc];
-                       UINavigationController *nav1=[[UINavigationController alloc]initWithRootViewController:svc];
-                       NVSlideMenuController *slideMenuVC = [[NVSlideMenuController alloc] initWithMenuViewController:nav1 andContentViewController:nax2];
-                       
-                       [self.navigationController pushViewController:slideMenuVC animated:YES];
-                       */
-
+                       [self.navigationController popViewControllerAnimated:YES];
                       //
                       //                      //username = user.first_name;
                       //                      //usergender = [user objectForKey:@"gender"];
@@ -100,20 +137,11 @@
      }];
 
 }
-- (IBAction)LoginWithEmailAccount:(UIButton *)sender {
-   // self.navigationController.navigationBar.hidden=NO;
-    UIStoryboard * storyBoardWithoutAuto =[UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    
-    LoginViewController *Login =[storyBoardWithoutAuto instantiateViewControllerWithIdentifier:@"LoginViewController"];
-    [self.navigationController pushViewController:Login animated:YES];
+- (IBAction)FinishSignUp:(id)sender {
+     [self.navigationController popViewControllerAnimated:YES];
 }
-- (IBAction)SignUpCreateAccount:(UIButton *)sender {
- //   self.navigationController.navigationBar.hidden=NO;
-    UIStoryboard * storyBoardWithoutAuto =[UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    
-    SignUpViewController *sign =[storyBoardWithoutAuto instantiateViewControllerWithIdentifier:@"SignUpViewController"];
-    [self.navigationController pushViewController:sign animated:YES];
-
+- (IBAction)back:(UIButton *)sender {
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 @end
