@@ -8,6 +8,8 @@
 
 #import "SlideViewController.h"
 #import "NVSlideMenuController.h"
+#import "ProductListingViewController.h"
+#import "SellViewController.h"
 @interface SlideViewController ()
 
 @end
@@ -17,6 +19,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     names=[[NSMutableArray alloc]initWithObjects:@"You",@"BUY",@"SELL",@"CART",@"SETTING", nil];
+     images=[[NSMutableArray alloc]initWithObjects:@"Meuser_logo_icon.png",@"Mebuy_icon.png",@"Mesell_icon.png",@"Mecart_icon.png",@"Mesetting_icon.png", nil];
     // Do any additional setup after loading the view from its nib.
 }
 -(void)viewWillAppear:(BOOL)animated
@@ -50,19 +53,27 @@
     //cell.accessoryType=UITableViewCellAccessoryDisclosureIndicator;
     //  cell.selectionStyle = UITableViewCellSelectionStyleGray;
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
-//    
-//    UIImageView *img1=[[UIImageView alloc]initWithFrame:CGRectMake(28, 12, 18, 20)];
-//    img1.image=[UIImage imageNamed:images[indexPath.row]];
-//    [cell addSubview:img1];
+    UIImageView *img1;
+    if (indexPath.row==0)
+        img1=[[UIImageView alloc]initWithFrame:CGRectMake(55, 5, 60, 60)];
+    else
+        img1=[[UIImageView alloc]initWithFrame:CGRectMake(65, 40, 40, 30)];
+    img1.image=[UIImage imageNamed:images[indexPath.row]];
+    [cell addSubview:img1];
     
     
     UIFont * myFont = [UIFont fontWithName:@"SegoeUI-Light" size:15];
-    CGRect labelFrame = CGRectMake (60, 13, 200, 20);
+    CGRect labelFrame;
+    if (indexPath.row==0)
+         labelFrame = CGRectMake (60, 70, 50, 20);
+    else
+         labelFrame = CGRectMake (50, 8, 70, 30);;
     UILabel *label = [[UILabel alloc] initWithFrame:labelFrame];
     [label setFont:myFont];
     label.lineBreakMode=NSLineBreakByWordWrapping;
-    label.numberOfLines=5;
-    label.textColor=[UIColor colorWithRed:199/255.0 green:210/255.0 blue:223/255.0 alpha:1.0];;
+    label.numberOfLines=1;
+    label.textAlignment=NSTextAlignmentCenter;
+    label.textColor=[UIColor whiteColor];
     //label.backgroundColor=[UIColor clearColor];
     [label setText:names[indexPath.row]];
     [cell addSubview:label];
@@ -70,15 +81,31 @@
     
     //cell.textLabel.text=names[indexPath.row];
     cell.tag=indexPath.row;
-    //        CGRect frame =cell.frame;
-    //        UIImageView *cellima =[[UIImageView alloc]initWithFrame:frame];
-    //        cellima.image=[UIImage imageNamed:@"menu_list_bg.png"];
-    //        cellima.alpha=0.5;
-    //        [cell addSubview:cellima];
-    //        [cell bringSubviewToFront:cellima];
+//            CGRect frame =cell.frame;
+//            UIImageView *cellima =[[UIImageView alloc]initWithFrame:frame];
+//            cellima.image=[UIImage imageNamed:@"menu_list_bg.png"];
+//            cellima.alpha=0.5;
+//            [cell addSubview:cellima];
+//            [cell bringSubviewToFront:cellima];
     return cell;
 }
-
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.row==1) {
+        ProductListingViewController *plvc;
+        UIStoryboard * storyBoardWithoutAuto =[UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        plvc=[storyBoardWithoutAuto instantiateViewControllerWithIdentifier:@"ProductListingViewController"];;
+        UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:plvc];
+        [self.slideMenuController closeMenuBehindContentViewController:navController animated:YES completion:nil];
+    }
+    if (indexPath.row==2) {
+        SellViewController *Svc;
+        UIStoryboard * storyBoardWithoutAuto =[UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        Svc=[storyBoardWithoutAuto instantiateViewControllerWithIdentifier:@"SellViewController"];;
+        UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:Svc];
+        [self.slideMenuController closeMenuBehindContentViewController:navController animated:YES completion:nil];
+    }
+}
 /*
 #pragma mark - Navigation
 

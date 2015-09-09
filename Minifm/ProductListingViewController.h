@@ -11,6 +11,7 @@
 
 @interface ProductListingViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
 
+@property (strong, nonatomic) IBOutlet UIButton *slide_Button;
 @property (strong, nonatomic) IBOutlet UITextField *txt_search;
 
 @property (strong, nonatomic) IBOutlet UITableView *tbl_products;

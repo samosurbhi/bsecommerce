@@ -7,7 +7,7 @@
 //
 
 #import "ProductListingViewController.h"
-
+#import "NVSlideMenuController.h"
 @interface ProductListingViewController ()
 {
     ProductListingTableViewCell *cell;
@@ -19,8 +19,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-   
+     self.navigationController.navigationBar.hidden=YES;
+    [self.slide_Button addTarget:self.slideMenuController action:@selector(toggleMenuAnimated:) forControlEvents:UIControlEventTouchUpInside];
     self.txt_search.background = [UIImage imageNamed:@"search_input.png"];
     self.txt_search.layer.cornerRadius = 15;
     //Hello check changes
@@ -31,7 +31,10 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
+-(void)viewWillAppear:(BOOL)animated
+{
+     self.navigationController.navigationBar.hidden=YES;
+}
 /*
 #pragma mark - Navigation
 

@@ -11,7 +11,7 @@
 #import <FacebookSDK/FacebookSDK.h>
 #import "NVSlideMenuController.h"
 #import "slideViewController.h"
-//#import "ProductListingViewController.h"
+#import "ProductListingViewController.h"
 @interface LoginViewController ()
 
 @end
@@ -66,7 +66,7 @@
     return YES;
 }
 - (IBAction)Login:(id)sender {
-    /*self.navigationController.navigationBar.hidden=YES;
+   self.navigationController.navigationBar.hidden=YES;
     SlideViewController *svc;
     ProductListingViewController *plvc;
       UIStoryboard * storyBoardWithoutAuto =[UIStoryboard storyboardWithName:@"Main" bundle:nil];
@@ -78,7 +78,7 @@
     NVSlideMenuController *slideMenuVC = [[NVSlideMenuController alloc] initWithMenuViewController:nav1 andContentViewController:nax2];
     
     [self.navigationController pushViewController:slideMenuVC animated:YES];
-*/
+
 }
 - (IBAction)ForgotMyPassword:(id)sender {
 }
