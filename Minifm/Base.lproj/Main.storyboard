@@ -89,7 +89,7 @@
                                 </connections>
                             </textField>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="header_logo.png" id="lju-q5-Lsy">
-                                <rect key="frame" x="244" y="27" width="66" height="20"/>
+                                <rect key="frame" x="244.00000026189917" y="27" width="66" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="321" sectionHeaderHeight="22" sectionFooterHeight="22" id="PTr-f4-3pk">
@@ -298,7 +298,7 @@
                                 </state>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="header_logo.png" id="Uwx-YH-elG">
-                                <rect key="frame" x="238" y="27" width="66" height="20"/>
+                                <rect key="frame" x="237.9999993642171" y="27" width="66" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="POST" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="XED-PL-I76">

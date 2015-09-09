@@ -52,7 +52,7 @@
               ^(FBRequestConnection *connection, NSDictionary<FBGraphUser> *user, NSError *error)
               {
                   if (!error)
-                  {
+                  {////xzjkohlkjdklgj
                       NSLog(@"accesstoken %@",[NSString stringWithFormat:@"%@",appDelegate.session.accessTokenData]);
                       NSLog(@"FB user first name:%@",user.name);
                       //                      NSLog(@"FB user last name:%@",user.last_name);
