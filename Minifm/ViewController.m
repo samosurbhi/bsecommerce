@@ -12,17 +12,22 @@
 #import "SignUpViewController.h"
 
 @interface ViewController ()
+{
+
+    AppDelegate *appDelegate;
+}
 
 @end
 
 @implementation ViewController
-@synthesize appDelegate;
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     // Do any additional setup after loading the view, typically from a nib.
 }
+
 -(void)viewWillAppear:(BOOL)animated
 {
     self.navigationController.navigationBar.hidden=YES;
@@ -33,10 +38,10 @@
 }
 - (IBAction)SignInWithFacebook:(UIButton *)sender {
     //public_profile
-    self.appDelegate.session = [[FBSession alloc] initWithPermissions:@[@"public_profile,email,user_friends"]];
-    [FBSession setActiveSession:self.appDelegate.session];
+    appDelegate.session = [[FBSession alloc] initWithPermissions:@[@"public_profile,email,user_friends"]];
+    [FBSession setActiveSession:appDelegate.session];
     
-    [self.appDelegate.session openWithBehavior:FBSessionLoginBehaviorWithFallbackToWebView
+    [appDelegate.session openWithBehavior:FBSessionLoginBehaviorWithFallbackToWebView
                              completionHandler:^(FBSession *session,
                                                  FBSessionState status,
                                                  NSError *error)

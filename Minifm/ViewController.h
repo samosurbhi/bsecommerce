@@ -12,6 +12,5 @@
 @interface ViewController : UIViewController<FBLoginViewDelegate,FBGraphPerson>
 
 
-
 @end
 
